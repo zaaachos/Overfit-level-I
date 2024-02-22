@@ -64,18 +64,26 @@
       input[type="submit"]:hover {
         background-color: rgb(4, 113, 202);
       }
+      .prediction{
+        display: none;
+      }
+      .container.hide-grid .grid-container {
+  display: none;
+}
     </style>
   </head>
   <body>
-    <div class="container">
+    <!-- Use if statement {% if display_main == 'none' %}hide-grid{% endif %}-->
+
+    <div class="container">             
       <h1>Obesity Risk Predictor</h1>
-      <form action="#" method="post">
-        <div class="grid-container">
+      <form action="/predict" method="post">
+        <div class="grid-container" id="main_content">
           <div class="form-group">
             <label for="gender">Gender:</label>
             <select id="gender" name="gender">
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>
           </div>
           <div class="form-group">
@@ -92,7 +100,7 @@
           </div>
           <div class="form-group">
             <label for="family_history">Family History with Overweight:</label>
-            <select id="fam" name="gender">
+            <select id="fam" name="fam">
               <option value="yes">Yes</option>
               <option value="no">No</option>
             </select>
@@ -124,7 +132,7 @@
           <div class="form-group">
             <label for="caec">Consumption of food between main meals:</label>
             <select id="caec" name="caec">
-                <option value="No">No</option>
+                <option value="no">No</option>
                 <option value="Sometimes">Sometimes</option>
                 <option value="Frequently">Frequently</option>
                 <option value="Always">Always</option>
@@ -176,7 +184,7 @@
           <div class="form-group">
             <label for="calc">Consumption of alcohol:</label>
             <select id="calc" name="calc">
-                <option value="No">No</option>
+                <option value="no">No</option>
                 <option value="Sometimes">Sometimes</option>
                 <option value="Frequently">Frequently</option>
                 <option value="Always">Always</option>
@@ -184,7 +192,7 @@
           </div>
           <div class="form-group">
             <label for="mtrans">Transportation used:</label>
-            <select id="mtrans" name="Transportation">
+            <select id="mtrans" name="mtrans">
                 <option value="Public_Transportation">Public Transportation</option>
                 <option value="Automobile">Car</option>
                 <option value="Motorbike">Motorbike</option>

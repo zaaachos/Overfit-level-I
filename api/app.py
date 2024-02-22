@@ -1,6 +1,6 @@
 from utils.custom_model import CustomModelling, load_checkpoint
 from pathlib import Path
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, redirect, url_for
 import pandas as pd
 from utils.dataset import feature_engineering
 
@@ -31,6 +31,7 @@ app = Flask(__name__)
 
 
 def predict_sample(sample: dict) -> dict:
+    sample =sample['data']
     sample = [sample]
     sample_df = pd.DataFrame(sample)
 
@@ -40,13 +41,68 @@ def predict_sample(sample: dict) -> dict:
     return {"prediction": predictions.item(), "class": class_names[predictions.item()]}
 
 
-@app.route("/")
+def create_request_data(request: request) -> dict:  # type: ignore
+    gender = request.form.get("gender")
+    age = int(request.form.get("age"))
+    height = float(request.form.get("height").replace(",", ".")) / 100
+    weight = float(request.form.get("weight"))
+    fam = request.form.get("fam")
+    favc = request.form.get("favc")
+    fcvc = request.form.get("fcvc")
+    ncp = request.form.get("ncp")
+    caec = request.form.get("caec")
+    print(caec)
+    smoke = request.form.get("smoke")
+    ch2o = request.form.get("ch2o")
+    scc = request.form.get("scc")
+    faf = request.form.get("faf")
+    tue = request.form.get("tue")
+    calc = request.form.get("calc")
+    mtrans = request.form.get("mtrans")
+    print(mtrans)
+
+    return {
+        "data": {
+            "Gender": gender,
+            "Age": age,
+            "Height": height,
+            "Weight": weight,
+            "FamHist": fam,
+            "FAVC": favc,
+            "FCVC": fcvc,
+            "NCP": ncp,
+            "CAEC": caec,
+            "SMOKE": smoke,
+            "CH2O": ch2o,
+            "SCC": scc,
+            "FAF": faf,
+            "TUE": tue,
+            "CALC": calc,
+            "MTRANS": mtrans,
+        }
+    }
+
+
+
+@app.route("/obesityRiskForm", methods=["GET", "POST"])
 def home():
-    return render_template("home.html")
+    if request.method == "POST":
+        return redirect(url_for("predict"))
+    return render_template("obesityRiskForm.html")
 
 
-@app.post("/predict")
+@app.route("/predict", methods=["POST", "GET"])
 def predict():
+    if request.method == "POST":
+        sample = create_request_data(request=request)
+        prediction = predict_sample(sample)
+        return render_template("predict.html", prediction_class=prediction['class'])
+    else:
+        return render_template("predict.html", prediction="")
+
+
+@app.post("/predict_api")
+def predict_api():
     data = request.json
     try:
         sample = data["data"]
@@ -54,9 +110,7 @@ def predict():
         return jsonify({"error": "Not text was fetched!"})
     result_data = predict_sample(sample)
     try:
-        result = jsonify(
-            result_data
-        )
+        result = jsonify(result_data)
     except TypeError as e:
         result = jsonify({"error": str(e)})
 
