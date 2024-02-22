@@ -5,4 +5,5 @@ This is the work I've done for the Kaggle Playground Series competition **S04E02
 - [ ] Provide more details about campaign
 - [ ] Provide a better looking README
 - [x] Codify the work that is provided in my notebook
-- [ ] Make a web app, using Docker, Flask, Github actions, Heroku or GCP
+- [x] Make a web app using Flask and Postman
+- [ ] Dockerize and deploy it with Github actions, Heroku or GCP
