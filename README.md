@@ -5,4 +5,4 @@ This is the work I've done for the Kaggle Playground Series competition **S04E02
 - [ ] Provide more details about campaign
 - [ ] Provide a better looking README
 - [ ] Codify the work that is provided in my notebook
-- [ ] Make an application based on this work
+- [ ] Make a web app, using Docker, Flask, Github actions, Heroku or GCP
