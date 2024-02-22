@@ -6,4 +6,5 @@ This is the work I've done for the Kaggle Playground Series competition **S04E02
 - [ ] Provide a better looking README
 - [x] Codify the work that is provided in my notebook
 - [x] Make a web app using Flask and Postman
-- [ ] Dockerize and deploy it with Github actions, Heroku or GCP
+- [x] Dockerize and deploy it to docker Hub
+- [ ] Deploy to a cloud service
