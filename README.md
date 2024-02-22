@@ -8,3 +8,7 @@ This is the work I've done for the Kaggle Playground Series competition **S04E02
 - [x] Make a web app using Flask and Postman
 - [x] Dockerize and deploy it to docker Hub
 - [ ] Deploy to a cloud service
+
+
+## Example video
+![ExampleGif](https://i.imgur.com/4MmYFII.gif)
