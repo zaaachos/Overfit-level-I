@@ -1,7 +1,7 @@
 # Overfit_Level_I
 Welcome to Overfit_Level_I! This repository showcases my work for the **Kaggle competition [S04E02](https://www.kaggle.com/competitions/playground-series-s4e2)**, focusing on Multi-Class Prediction of Obesity Risk. The goal of this competition is to use various factors to predict obesity risk in individuals, which is related to cardiovascular disease. 
 
-My top performing model ranked in the **top 30% out of 2,840 competitors**. Applied an extensive Exploratory Data Analysis, along with F**eature Engineering, scikit-learn, SHAP, CatBoost, XGBoost, and LightGBM, and different Ensemble strategies**. You can read my analysis and developemnt in my [submission_notebook](notebook\submission_notebook.ipynb)
+My top performing model ranked in the **top 30% out of 2,840 competitors**. Applied an extensive Exploratory Data Analysis, along with F**eature Engineering, scikit-learn, SHAP, CatBoost, XGBoost, and LightGBM, and different Ensemble strategies**. You can read my analysis and developemnt in my [submission_notebook](notebook/submission_notebook.ipynb)
 
 ## ML App
 One of the highlights of this project is the deployment of a Dockerized Flask application, which you can interact with, through HuggingFace Spaces. Check it here [OverfitLevelI](https://zaaachos-overfitleveli.hf.space/obesityRiskForm)
