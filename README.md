@@ -1,4 +1,4 @@
-# Overfit_Level_I [![Docker Pulls](https://img.shields.io/docker/pulls/neomatrix369/better-nlp.svg)](https://hub.docker.com/r/zachooos/obesityriskapp) 
+# Overfit_Level_I [![Docker Pulls](https://img.shields.io/docker/pulls/zachooos/obesityriskapp.svg)](https://hub.docker.com/r/zachooos/obesityriskapp) 
 <img style="width:350px; display:block; margin:0 auto;" src="notebook/data/img.jpg">
 
 Welcome to Overfit_Level_I! This repository showcases my work for the **Kaggle competition [S04E02](https://www.kaggle.com/competitions/playground-series-s4e2)**, focusing on Multi-Class Prediction of Obesity Risk. The goal of this competition is to use various factors to predict obesity risk in individuals, which is related to cardiovascular disease. 
