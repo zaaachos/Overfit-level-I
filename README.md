@@ -51,3 +51,4 @@ This will start the Flask server, and you can access the application at http://l
 - [x] Dockerize and deploy it to docker Hub
 - [x] Deploy to a cloud service (HuggingFace Spaces)
 - [ ] Deploy to another cloud service with GitHub Actions
+- [ ] Write a notebook readme that summarises all implemented approaches along with graphs. 
