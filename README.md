@@ -17,17 +17,22 @@ To get started with this project, follow these steps to set up your environment:
 git clone https://github.com/zaaachos/Overfit-Level-I.git
 ```
 
-- Install Dependencies
-It is highly recommended it to use conda as your virtual enviroment:
+- Install Dependencies:
+  
+It is highly recommended, to use **conda** as your virtual enviroment:
 ```bash
 conda create -n obesityEnv python=3.9
+```
+```bash
+conda activate obesityEnv
 ```
 Navigate to the `webapp` project directory and install the necessary dependencies by running:
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the Application Locally:
+- Run the Application Locally:
+
 Once dependencies are installed, you can run the Flask application locally by executing:
 
 ```bash
